@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: rhbk
+  labels:
+    kubernetes.io/metadata.name: rhbk
+  annotations:
+    openshift.io/display-name: RHDH demo project
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: rhbk-group
+  namespace: rhbk
+spec:
+  targetNamespaces:
+    - rhbk
+...
